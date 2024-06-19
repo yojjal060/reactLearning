@@ -1,5 +1,5 @@
-export default function page(){
-    <div>
+export default function Page(){
+    return(<div>
         <img src="./react-logo.png" width="40px" />
         <h1>Fun facts about React</h1>
         <ul>
@@ -9,5 +9,5 @@ export default function page(){
             <li>Is maintained by Facebook</li>
             <li>Powers thousands of enterprise apps, including mobile apps</li>
         </ul>
-    </div>
+    </div>)
 }
