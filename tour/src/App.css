@@ -19,18 +19,22 @@
 
 
 /* Desktop screens */
+/* Desktop screens */
 @media (min-width: 1024px) {
-  .card {
-    width: calc(33.33% - 20px); /* 33.33% width for 3 cards per row */
-}
+    .body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px 300px;
+        gap: 30px;
+        
+    }
 
-  .body{
-    margin: 100px;
-    display: flex;
-    flex-direction:row;
-    gap: 40px;
+    .card {
+        flex: 1 0 30%; /* grow | shrink | basis */
+        margin: 10px;
+        max-width: calc(33.33% - 20px);
+    }
+
     
-    
-    
-  }
 }
