@@ -1,0 +1,36 @@
+.container{
+    
+    width: auto;
+    height: auto;
+    margin: 30px 20px;
+}
+
+.Title{
+    text-align: center;
+}
+
+
+.card{
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding-bottom: 20px;
+}
+
+
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+  .card {
+    width: calc(33.33% - 20px); /* 33.33% width for 3 cards per row */
+}
+
+  .body{
+    margin: 100px;
+    display: flex;
+    flex-direction:row;
+    gap: 40px;
+    
+    
+    
+  }
+}
