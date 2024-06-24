@@ -3,6 +3,7 @@ import './Card.css'
 
 export default function Card({image,description,overlayText}) {
   const [color, setColor] = useState("green");
+  const [isExpanded,setIsExpanded] = useState(false)
 
   useEffect(() => {
     const price = parseFloat(overlayText.replace(/,/g, '')); // Remove commas and convert to number
@@ -16,12 +17,20 @@ export default function Card({image,description,overlayText}) {
     }
   }, [overlayText]);
   
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <div className='card'>
       
       <img className='images' src={image} alt="image"/>
-      <p>{description}</p>
+      <p>
+        {isExpanded ? description : `${description.substring(0, 89)}...`}
+        <span className='see-more' style={{color: "#34d399"}} onClick={toggleExpanded}>
+          {isExpanded ? '    See Less' : '   See More'}
+        </span>
+      </p>
       <button>Not Interested</button>
       <div className="overlay-text" style={{ backgroundColor: color }}>{overlayText}</div>
     </div>

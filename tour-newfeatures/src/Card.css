@@ -9,37 +9,48 @@
 .card > button{
     display: block;
     margin: auto;
-    color: red;
-    background-color: white;
-    border-color: aquamarine;
+    color: #34d399;
+    border:2px solid #34d399;
     width: 15rem;
+    border-radius: 50px;
     
+}
+
+.card > button:hover{
+    color: white;
+    background-color: #34d399;
 }
 
 .card {
     position: relative;
-    color: red;
+    color: black;
     background-color: white;
-    border-color: aquamarine;
     
-    /* Add any other styles your card needs */
+    
+    
 }
 
 .overlay-text{
     position:absolute;
-    top: 5%;
-    left: 87%;
+    top: 3.4%;
+    left: 89.8%;
     color: white;
     transform: translate(-50%, -50%);
-    padding: 10px 20px;
+    padding: 4px 10px;
     font-size: 20px;
     text-align: center;
     
 }
 
+.see-more{
+    cursor: pointer;
+}
+
+
 @media (min-width: 1024px) {
     .overlay-text{
-        left:83.5%;
+        left:91%;
+        top:3.3%;
     }
 }
 
