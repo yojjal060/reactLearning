@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 
-export default function Card({ image, description, overlayText }) {
+export default function Card({ id, image, description, overlayText ,onRemove}) {
   const [color, setColor] = useState("green");
   const [isExpanded, setIsExpanded] = useState(false);
   
@@ -30,7 +30,7 @@ export default function Card({ image, description, overlayText }) {
           {isExpanded ? '    See Less' : '   See More'}
         </span>
       </p>
-      <button>Not Interested</button>
+      <button onClick={() => onRemove(id)}>Not Interested</button>
       <div className="overlay-text" style={{ backgroundColor: color }}>{overlayText}</div>
     </div>
   );
