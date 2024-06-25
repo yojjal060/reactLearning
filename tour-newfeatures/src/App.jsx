@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Card from './Card'; // Make sure this path matches your Card component file path
+import Card from './Card'; 
 
 
 

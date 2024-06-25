@@ -7,7 +7,7 @@ export default function Card({ id, image, description, overlayText ,onRemove}) {
   
 
   useEffect(() => {
-    const price = parseFloat(overlayText.replace(/,/g, '')); // Remove commas and convert to number
+    const price = parseFloat(overlayText.replace(/,/g, '')); 
     if (price > 2000) {
       setColor('red');
     } else if (price > 1100) {
