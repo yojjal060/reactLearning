@@ -1,17 +1,25 @@
-import React,{useRef} from 'react'
+import { useState, useEffect, useRef } from "react";
+
 
 export default function App() {
-  let ref = useRef(0)
+  const [inputValue, setInputValue] = useState("");
+  const previousInputValue = useRef("");
 
-  function clickHandler(){
-    ref.current = ref.current + 1;
-    alert('You click ' +ref.current + ' times')
-
-  }
+  useEffect(() => {
+    previousInputValue.current = inputValue;
+  }, [inputValue]);
 
   return (
-    <div>
-      <button onClick={clickHandler}>click me</button>
-    </div>
-  )
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Current Value: {inputValue}</h2>
+      <h2>Previous Value: {previousInputValue.current}</h2>
+    </>
+  );
 }
+
+
