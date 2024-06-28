@@ -11,11 +11,22 @@ export default function Form() {
       date:''
     })
 
+    const [todo, setTodo] = useState([])
     const handleSubmit = (e)=>{
-      setIsSubmitted(true)
       e.preventDefault();
-    }
+      setTodo([
+        ...todo,
+        inputValue
+      ]) 
+     
       
+    }
+    
+    const del  = (userName)=>{
+      setTodo(todo.filter(
+        (item) => item.userName !== userName
+      ))
+    }
     
 
     
@@ -50,7 +61,16 @@ export default function Form() {
                 </form>
         </div>
         <div>
-          {isSubmitted ? <p>Hello My name is {inputValue.userName} </p> : false}
+            {
+              todo.map((item)=>(
+                <div key={item.id}>
+                  <p>{item.userName}</p>
+                  <p>{item.email}</p>
+                  <p>{item.date}</p>
+                  <button onClick={() => (del(item.userName))}>&times;</button>
+                </div>
+              ))
+            }
         </div>
     </div>
   )
