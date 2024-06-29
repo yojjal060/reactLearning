@@ -32,7 +32,7 @@ export default function Card({ id, image, description, overlayText ,onRemove,tit
         </span>
       </p>
       <button onClick={() => onRemove(id)}>Not Interested</button>
-      <div className="overlay-text" style={{ backgroundColor: color }}>{overlayText}</div>
+      <div className="overlay-text" style={{ backgroundColor: color }}>${overlayText}</div>
     </div>
   );
 }

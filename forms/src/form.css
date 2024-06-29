@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(to right, #a0d2eb, #e5eaf5, #d0bdf4, #8458B3, #a28089);
+}
+
+.parent-container{
+    margin-top: 150px;
+}
+
+.form-div{
+    margin: auto;
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .parent-container {
+        margin:200px;
+    }
+    .form-div{
+        width: 450px;
+    }
+}
+
+label,input{
+    margin-bottom: 20px;
+}
