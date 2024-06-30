@@ -1,0 +1,7 @@
+
+  
+#task-item:hover {
+    border-radius:50%;
+    background-color: lightgray; /* Optional: for better visibility of the effect */
+     /* Adjust padding to keep the text inside the circle */
+  }
