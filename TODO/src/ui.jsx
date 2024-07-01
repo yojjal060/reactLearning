@@ -8,12 +8,22 @@ export default function UI() {
 
   const [todo, setTodo] = useState([]);
 
+  const [editId,setEditId] = useState(null);
+
   const handleTask = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    // Trim the inputValue.task
+    e.preventDefault(); 
     if (inputValue.task.trim() !== '') {
-      setTodo([...todo, { id: Date.now(), task: inputValue.task.trim() }]);
-      setInputValue({ task: '' }); // Clear input
+      if (editId) {
+        
+        setTodo(todo.map(item =>
+          item.id === editId ? { ...item, task: inputValue.task.trim() } : item
+        ));
+        setEditId(null); 
+      } else {
+        
+        setTodo([...todo, { id: Date.now(), task: inputValue.task.trim(), strikeThrough: false }]);
+      }
+      setInputValue({ task: '' }); 
     }
   };
 
@@ -34,6 +44,14 @@ export default function UI() {
     setTodo(todo.filter(item => item.id !== id));
   };
 
+  const handleEdit = id => {
+    const taskToEdit = todo.find(item=> item.id === id)
+    if(taskToEdit){
+      setInputValue({task:taskToEdit.task})
+      setEditId(id)
+    }
+  }
+
   return (
     <div>
       <body>
@@ -50,13 +68,13 @@ export default function UI() {
               value={inputValue.task}
               onChange={handleChange}
             />
-            <button type="submit" className="text-end ml-16 hover:brightness-110 hover:animate-pulse font-bold py-3 px-6 rounded-full bg-gradient-to-r from-blue-500 to-pink-500 text-white">Add Task</button>
+            <button type="submit" className="text-end ml-16 hover:brightness-110 hover:animate-pulse font-bold py-3 px-6 rounded-full bg-gradient-to-r from-blue-500 to-pink-500 text-white"> {editId ? 'Update Task' : 'Add Task'}</button>
           </form>
           <div>
           {todo.map((item) => (
             <div key={item.id} className="flex justify-between mb-6">
               <div className="flex items-center">
-                <span className="ml-16 mr-6 cursor-pointer">✏️</span>
+                <span onClick={() => handleEdit(item.id)} className="ml-16 mr-6 cursor-pointer">✏️</span>
                 <p onClick={() => toggleStrikeThrough(item.id)} className="cursor-pointer" style={{ textDecoration: item.strikeThrough ? 'line-through' : 'none' }}>
                   {item.task}
                 </p>
