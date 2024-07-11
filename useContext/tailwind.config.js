@@ -1,0 +1,15 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {fontFamily: {
+      'comic-neue': ["'Comic Neue'", 'sans-serif'] ,
+      'oswald': ["'Oswald'", 'sans-serif']
+      // Add your font name and fallbacks
+    }},
+  },
+  plugins: [],
+}
