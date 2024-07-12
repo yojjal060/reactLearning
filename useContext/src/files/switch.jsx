@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Switch() {
     return (
-        <div className='h-4'>
+        <div className='h-4 border border-red-600'>
             <label className="inline-flex items-center relative left-2 bottom-3">
                 <input className="peer hidden" id="toggle" type="checkbox" />
                 <div
