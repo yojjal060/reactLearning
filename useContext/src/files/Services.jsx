@@ -5,7 +5,7 @@ export default function Services() {
   return (
     <div>
       <Navbar />
-      cool
+    
     </div>
   )
 }

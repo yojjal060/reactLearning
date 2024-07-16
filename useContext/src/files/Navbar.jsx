@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <div className={`border-gray-200 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} h-screen`}>
-    <nav className={`border-gray-200 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+    <nav className={`border-gray-200 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} border border-x-gray-500`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className={`self-center whitespace-nowrap h-8 font-oswald font-extrabold text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}>
@@ -107,9 +107,12 @@ export default function Navbar() {
               <Switch />
             </li>
           </ul>
+          
         </div>
+        
       </div>
     </nav>
+    <h1 className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} flex h-5 p-36 justify-center text-2xl`}>{isDarkMode ? 'Black lives Matter' : 'Yagami Light'}</h1>
    </div> 
   );
 }
